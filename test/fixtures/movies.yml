@@ -1,0 +1,15 @@
+one:
+  media_format: MyString
+  title: MyString
+  copies_at_home: 1
+  order: 1
+  notes: MyText
+  rating: 1
+
+two:
+  media_format: MyString
+  title: MyString
+  copies_at_home: 1
+  order: 1
+  notes: MyText
+  rating: 1

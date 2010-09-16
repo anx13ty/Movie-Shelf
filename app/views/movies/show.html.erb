@@ -1,0 +1,20 @@
+<% title @movie.title %>
+
+<p>
+  <strong>Media Format:</strong>
+  <%= @movie.media_format %>
+</p>
+<p>
+  <strong>Notes:</strong>
+  <%= @movie.notes %>
+</p>
+<p>
+  <strong>Rating:</strong>
+  <%= @movie.rating %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_movie_path(@movie) %> |
+  <%= link_to "Destroy", @movie, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", movies_path %>
+</p>

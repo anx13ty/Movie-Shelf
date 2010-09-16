@@ -1,0 +1,62 @@
+<% if admin? %>
+	<%= link_to "Logout", logout_path, :id => "login" %>
+	<%= link_to "Add Movie", new_movie_path, :id => "add_movie" %>
+	<div id="greeting">Hey, Yoski</div>
+<% else %>
+	<%= link_to "Login", login_path, :id => "login" %>
+<% end %>
+
+<div id="movie_stats">
+	<div id="total_count">
+		<div class="count"><%= @total_movies.size %></div>
+		<div class="label">Total Count</div>
+	</div>
+	<div id="yearly_count">
+		<div class="count"><%= @yearly_count.size %></div>
+		<div class="label">Yearly Count</div>
+	</div>
+	<div id="monthly_count">
+		<div class="count"><%= @monthly_count.size %></div>
+		<div class="label">Monthly Count</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<%= form_for @search, :url => movies_path, :html => {:method => :get} do |f| %>
+    <div id="search">	
+		<%= f.text_field :title_contains, :class => "search-field" %>
+		<div id="clear-box"><%= link_to "x", "#", :class => "clear-search" %></div>
+		<div class="clear"></div>
+	</div>
+<% end %>
+
+<% if @movies.blank? %>
+	<div id="nil-search">There were no movies that matched your search. Please search again.</div>
+<% else %>
+	<table>
+		<tr class="column-headers">
+			<th><%= sort_link @search, :title %></th>
+	    	<th><%= sort_link @search, :media_format %></th>
+	    	<th><%= sort_link @search, :created_at %></th>
+	  	</tr>
+	  	
+		<% if admin? %>
+	  		<% for movie in @movies %>
+		    	<tr class="movie_entry">
+			  		<td><%= link_to movie.title, movie, :class => 'movie_link' %></td>
+		      		<td><%= movie.media_format %></td>
+		      		<td><%= movie.created_at.to_date %></td>
+		    	</tr>
+		  	<% end %>
+		<% else %>
+			<% for movie in @movies %>
+		    	<tr class="movie_entry">
+			  		<td><%= movie.title  %></td>
+		      		<td><%= movie.media_format %></td>
+		      		<td><%= movie.created_at.to_date %></td>
+		    	</tr>
+		  	<% end %>
+		<% end %>
+	</table>
+	<div id="pagination"><%= will_paginate @movies %></div>
+<% end %>

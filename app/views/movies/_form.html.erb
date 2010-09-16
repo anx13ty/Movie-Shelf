@@ -1,0 +1,20 @@
+<%= form_for @movie do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :media_format %><br />
+    <%= f.text_field :media_format %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </p>
+  <p>
+    <%= f.label :rating %><br />
+    <%= f.text_field :rating %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
