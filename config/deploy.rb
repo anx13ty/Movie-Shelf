@@ -11,6 +11,7 @@ set :repository, "/home/#{user}/git/movieshelf.git"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 set :deploy_via, :remote_cache
+set :deploy_to, application
 set :git_enable_submodules, 1  # for rails vendored plugins
 set :branch, "master"
 set :git_shallow_clone, 1
