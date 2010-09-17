@@ -34,3 +34,6 @@ end
 
 set :scm_command, "~/packages/bin/git" #updated version of git on server in user directory
 set :local_scm_command, "/opt/local/bin/git" #correct path to local git
+
+set :chmod755, "app config db lib public vendor script script/* public/disp*"
+set :use_sudo, false
