@@ -5,7 +5,8 @@ set :application, "movieshelf.brentbahry.com"
 set :applicationdir, "/home/#{user}/#{application}"
 
 # set :application, "movieshelf"
-set :repository,  "#{user}@#{domain}/~/git/movieshelf.git"
+# set :repository,  "#{user}@#{domain}/~/git/movieshelf.git"
+set :repository, "http://git."
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
