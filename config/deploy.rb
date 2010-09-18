@@ -1,10 +1,11 @@
 set :user, "bbahry"
 set :domain, "vultureman.dreamhost.com"
 set :project, "movieshelf"
+# set :application, "movieshelf"
 set :application, "movieshelf.brentbahry.com"
 set :applicationdir, "/home/#{user}/#{application}"
 
-# set :application, "movieshelf"
+
 # set :repository,  "#{user}@#{domain}/~/git/movieshelf.git"
 set :repository, "/home/#{user}/git/movieshelf.git"
 
@@ -34,8 +35,8 @@ namespace :deploy do
   end
 end
 
-set :scm_command, "~/packages/bin/git" #updated version of git on server in user directory
-set :local_scm_command, "/opt/local/bin/git" #correct path to local git
+# set :scm_command, "~/packages/bin/git" #updated version of git on server in user directory
+# set :local_scm_command, "/opt/local/bin/git" #correct path to local git
 
 set :chmod755, "app config db lib public vendor script script/* public/disp*"
 set :use_sudo, false
