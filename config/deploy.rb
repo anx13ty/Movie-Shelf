@@ -7,7 +7,7 @@ set :applicationdir, "/home/#{user}/#{application}"
 
 
 # set :repository,  "#{user}@#{domain}/~/git/movieshelf.git"
-set :repository, "/home/#{user}/git/movieshelf.git"
+set :repository, "/home/#{user}/git/movie-shelf.git"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -38,5 +38,6 @@ end
 # set :scm_command, "~/packages/bin/git" #updated version of git on server in user directory
 # set :local_scm_command, "/opt/local/bin/git" #correct path to local git
 
+default_run_options[:pty] = true
 set :chmod755, "app config db lib public vendor script script/* public/disp*"
 set :use_sudo, false
